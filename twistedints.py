@@ -11,7 +11,19 @@ class TwistedInt:
         self.value = value
         self.n = n
 
-    def __str__(self):
+    def __str__(self, other=None):
         return ("<" + str(self.value) + ":" + str(self.n) + ">")
 
-    
+    def __add__(self, other):
+        if self.n == other.n:
+            total_value = (self.value + other.value) % self.n
+            return TwistedInt(total_value, self.n)
+        else:
+            raise ValueError('TwistedInts must have same n')
+
+    def __mul__(self, other):
+        if self.n == other.n:
+            total_value = (self.value + other.value + self.value * other.value) % self.n
+            return TwistedInt(total_value, self.n)
+        else:
+            raise ValueError('TwistedInts must have same n')
