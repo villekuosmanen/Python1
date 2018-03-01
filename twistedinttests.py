@@ -1,5 +1,6 @@
 import unittest
 from twistedints import TwistedInt
+from twistedintegers import TwistedIntegers
 
 class TwistedInt_Test(unittest.TestCase):
 
@@ -80,3 +81,19 @@ class TwistedInt_Test(unittest.TestCase):
         a = TwistedInt(2,5)
         b = TwistedInt(0,2)
         self.assertRaises(ValueError, TwistedInt.__mul__, a, b)
+
+    # twisted integers (list) testing
+
+    def test_zero_length(self):
+        self.assertRaises(ValueError, TwistedIntegers.__init__, self, 0)
+
+    def test_negative_length(self):
+        self.assertRaises(ValueError, TwistedIntegers.__init__, self, -1)
+
+    def test_regular_length(self):
+        z = TwistedIntegers(5)
+        self.assertEqual("[0, 1, 2, 3, 4]", str(z))
+
+    def test_find_size(self):
+        z = TwistedIntegers(5)
+        self.assertEqual(5, TwistedIntegers.Size(z))
