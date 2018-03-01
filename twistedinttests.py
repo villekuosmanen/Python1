@@ -81,3 +81,16 @@ class TwistedInt_Test(unittest.TestCase):
         a = TwistedInt(2,5)
         b = TwistedInt(0,2)
         self.assertRaises(ValueError, TwistedInt.__mul__, a, b)
+
+    # printall1 testing
+    def test_printall1_valid(self):
+        self.assertEqual("['5', '10']  Total: 2", TwistedInt.printall1(17))
+
+    def test_printall1_validButEmpty(self):
+        self.assertEqual("[]  Total: 0", TwistedInt.printall1(5))
+
+    def test_printall1_zeroN(self):
+        self.assertRaises(ValueError, TwistedInt.printall1, 0)
+
+    def test_printall1_negativeN(self):
+        self.assertRaises(ValueError, TwistedInt.printall1, -2)

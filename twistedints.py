@@ -15,7 +15,7 @@ class TwistedInt:
         self.value = value
         self.n = n
 
-    def __str__(self, other=None):
+    def __str__(self):
         """Output format: <a:n> where a ∈ Zn"""
         return ("<" + str(self.value) + ":" + str(self.n) + ">")
 
@@ -34,3 +34,15 @@ class TwistedInt:
             return TwistedInt(total_value, self.n)
         else:
             raise ValueError('TwistedInts must have same n')
+
+    @staticmethod
+    def printall1(n):
+        """Returns all values in Zn where x ⊗ x = 1"""
+        if n < 1:
+            raise ValueError('Negative or 0 n not allowed')
+        values = []
+        for i in range(n):
+            it = TwistedInt(i,n)
+            if str(it*it) == "<1:" + str(n) + ">":
+                values.append(str(i))
+        return str(values) + "  Total: " + str(len(values))
