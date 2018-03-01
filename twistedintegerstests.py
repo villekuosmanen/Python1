@@ -13,7 +13,7 @@ class TwistedIntegers_Test(unittest.TestCase):
 
     def test_regular_length(self):
         z = TwistedIntegers(5)
-        self.assertEqual("[0, 1, 2, 3, 4]", str(z))
+        self.assertEqual("['<0:5>', '<1:5>', '<2:5>', '<3:5>', '<4:5>']", str(z))
 
     def test_find_size(self):
         z = TwistedIntegers(5)
