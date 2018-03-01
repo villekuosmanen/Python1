@@ -63,10 +63,36 @@ class TwistedInt:
 
     @staticmethod
     def isAddAssociative(n):
-        ##TODO
-        raise NotImplementedError('TODO')
+        if n < 1:
+			raise ValueError('n must be positive')
+		for y in range(0, n-1):
+			for x in range(0, n-1):
+				for z in range (x, n-1):
+					if __addition(__addition(x, y, n), z, n) != __addition(x, __addition(y, z, n), n):
+						return False
+		return True
+		
+	@staticmethod
+    def isMulAssociative(n):
+        if n < 1:
+			raise ValueError('n must be positive')
+		for y in range(0, n-1):
+			for x in range(0, n-1):
+				for z in range (x, n-1):
+					if __multiply(__multiply(x, y, n), z, n) != __multiply(x, __multiply(y, z, n), n):
+						return False
+		return True
 		
 	@staticmethod
     def isDistributive(n):
-        ##TODO
-        raise NotImplementedError('TODO')
+        #If 1 is true for this n, we can optimise by not needing to check
+		#each combination of x and y (1, 2) and (2, 1) are the same.
+		#However, since we don't know for sure, we can't optimise this.
+        if n < 1:
+			raise ValueError('n must be positive')
+		for y in range(0, n-1):
+			for x in range(0, n-1):
+				for z in range (0, n-1):
+					if __multiply(__addition(x, y, n), z, n) != __addition(__multiply(x, z, n), __multiply(y, z, n), n):
+						return False
+		return True
