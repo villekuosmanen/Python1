@@ -49,7 +49,7 @@ class TwistedInt_Test(unittest.TestCase):
     def test_add_zeroValue(self):
         a = TwistedInt(2,5)
         b = TwistedInt(0,5)
-        self.assertEqual("<1:5>", str(a+b))
+        self.assertEqual("<2:5>", str(a+b))
 
     def test_add_differentN(self):
         a = TwistedInt(2,5)
@@ -60,21 +60,21 @@ class TwistedInt_Test(unittest.TestCase):
     def test_mul_valid(self):
         a = TwistedInt(2,5)
         b = TwistedInt(4,5)
-        self.assertEqual("<3:5>", str(a*b))
+        self.assertEqual("<4:5>", str(a*b))
 
     def test_mul_sameValue(self):
         a = TwistedInt(3,5)
-        self.assertEqual("<1:5>", str(a*a))
+        self.assertEqual("<0:5>", str(a*a))
 
     def test_mul_equalValues(self):
         a = TwistedInt(3,5)
         b = TwistedInt(3,5)
-        self.assertEqual("<1:5>", str(a*b))
+        self.assertEqual("<0:5>", str(a*b))
 
     def test_mul_zeroValue(self):
         a = TwistedInt(2,5)
         b = TwistedInt(0,5)
-        self.assertEqual("<0:5>", str(a*b))
+        self.assertEqual("<2:5>", str(a*b))
 
     def test_mul_differentN(self):
         a = TwistedInt(2,5)
