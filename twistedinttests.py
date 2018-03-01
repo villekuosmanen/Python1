@@ -97,3 +97,6 @@ class TwistedInt_Test(unittest.TestCase):
     def test_find_size(self):
         z = TwistedIntegers(5)
         self.assertEqual(5, TwistedIntegers.Size(z))
+
+    #tests for the functions that check properties of twisted integers
+	#TODO

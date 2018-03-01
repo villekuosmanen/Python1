@@ -34,3 +34,23 @@ class TwistedInt:
             return TwistedInt(total_value, self.n)
         else:
             raise ValueError('TwistedInts must have same n')
+
+    @staticmethod
+    def isAddCommutative(n):
+        ##TODO
+        raise NotImplementedError('TODO')
+
+    @staticmethod
+    def isMulCommutative(n):
+        ##TODO
+        raise NotImplementedError('TODO')
+
+    @staticmethod
+    def isAddAssociative(n):
+        ##TODO
+        raise NotImplementedError('TODO')
+		
+	@staticmethod
+    def isDistributive(n):
+        ##TODO
+        raise NotImplementedError('TODO')
