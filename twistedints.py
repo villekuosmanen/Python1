@@ -43,6 +43,7 @@ class TwistedInt:
 
     @staticmethod
     def isAddCommutative(n):
+		"""Tests if for all twisted ints of a given n, a ⊕ b == b ⊕ a"""
 		if n < 1:
 			raise ValueError('n must be positive')
         for x in range(0, n-1):
@@ -53,6 +54,7 @@ class TwistedInt:
 
     @staticmethod
     def isMulCommutative(n):
+		"""Tests if for all twisted ints of a given n, a ⊗ b == b ⊗ a"""
         if n < 1:
 			raise ValueError('n must be positive')
         for x in range(0, n-1):
@@ -63,6 +65,7 @@ class TwistedInt:
 
     @staticmethod
     def isAddAssociative(n):
+		"""Tests if for all twisted ints of a given n, (a ⊕ b) ⊕ c == a ⊕ (b ⊕ c)"""
         if n < 1:
 			raise ValueError('n must be positive')
 		for y in range(0, n-1):
@@ -74,6 +77,7 @@ class TwistedInt:
 		
 	@staticmethod
     def isMulAssociative(n):
+		"""Tests if for all twisted ints of a given n, (a ⊗ b) ⊗ c == a ⊗ (b ⊗ c)"""
         if n < 1:
 			raise ValueError('n must be positive')
 		for y in range(0, n-1):
@@ -85,6 +89,7 @@ class TwistedInt:
 		
 	@staticmethod
     def isDistributive(n):
+		"""Tests if for all twisted ints of a given n, (a ⊕ b) ⊗ c == (a ⊗ c) ⊕ (b ⊗ c)"""
         #If 1 is true for this n, we can optimise by not needing to check
 		#each combination of x and y (1, 2) and (2, 1) are the same.
 		#However, since we don't know for sure, we can't optimise this.
