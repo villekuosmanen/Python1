@@ -25,7 +25,7 @@ class TwistedMatrix:
         return str(output)
 
     def __add__(self, other):
-        """Addition"""
+        """Addition of 2 matrices"""
         if (len(self.matrix[0]) != len(other.matrix[0])):
             raise ValueError("Cannot add matrices of different dimensions")
         i = 0
@@ -37,7 +37,7 @@ class TwistedMatrix:
                 k = 0
                 while k < len(self.matrix):
                     elem = (self.matrix[i][j] * other.matrix[k][j])
-                    if (len(row) < j or j == 0) :
+                    if (len(row) <= j):
                         row.append(elem)
                     else:
                         row[j] += elem

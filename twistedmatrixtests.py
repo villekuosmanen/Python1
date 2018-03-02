@@ -23,3 +23,12 @@ class TwistedIntegers_Test(unittest.TestCase):
         m1 = TwistedMatrix([x,y])
         m2 = TwistedMatrix([x,y])
         self.assertEqual("[\"[\'<0:2>\', \'<0:2>\']\", \"[\'<0:2>\', \'<0:2>\']\"]", str(m1+m2))
+
+    def test_add2(self):
+        x = [TwistedInt(1,9), TwistedInt(2,9)]
+        y = [TwistedInt(3,9), TwistedInt(4,9)]
+        x1 = [TwistedInt(5,9), TwistedInt(6,9)]
+        y1 = [TwistedInt(7,9), TwistedInt(8,9)]
+        m1 = TwistedMatrix([x,y])
+        m2 = TwistedMatrix([x1,y1])
+        self.assertEqual("[\"[\'<8:9>\', \'<1:9>\']\", \"[\'<0:9>\', \'<6:9>\']\"]", str(m1+m2))
