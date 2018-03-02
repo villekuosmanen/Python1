@@ -26,25 +26,18 @@ class TwistedMatrix:
 
     def __add__(self, other):
         """Addition of 2 matrices"""
-        if (len(self.matrix[0]) != len(other.matrix[0])):
+        if len(self.matrix[0]) != len(other.matrix[0]) or len(self.matrix) != len(other.matrix):
             raise ValueError("Cannot add matrices of different dimensions")
-        i = 0
+        row = 0
         newmatrix = []
-        while i < len(self.matrix):
-            row = []
-            j = 0
-            while j < len(self.matrix[i]):
-                k = 0
-                while k < len(self.matrix):
-                    elem = (self.matrix[i][j] * other.matrix[k][j])
-                    if (len(row) <= j):
-                        row.append(elem)
-                    else:
-                        row[j] += elem
-                    k += 1
-                j += 1
-            newmatrix.append(row)
-            i += 1
+        while row < len(self.matrix):
+            newrow = []
+            column = 0
+            while column < len(self.matrix[row]):
+                newrow.append(self.matrix[row][column] + other.matrix[row][column])
+                column += 1
+            newmatrix.append(newrow)
+            row += 1
         return TwistedMatrix(newmatrix)
 
     def __mul__(self, other):
