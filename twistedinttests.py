@@ -99,4 +99,34 @@ class TwistedInt_Test(unittest.TestCase):
         self.assertEqual(5, TwistedIntegers.Size(z))
 
     #tests for the functions that check properties of twisted integers
-	#TODO
+	
+    def test_addComm_isValid(self):
+        #Proven that this will be true for all n
+        self.assertTrue(TwistedInt.isAddCommutative(5))
+
+    def test_addComm_zeronN(self):
+        self.assertRaises(ValueError, TwistedInt.isAddCommutative, 0)
+
+    def test_mulComm_isValid(self):
+        #Proven that this will be true for all n
+        self.assertTrue(TwistedInt.isMulCommutative(5))
+
+    def test_mulComm_zeronN(self):
+        self.assertRaises(ValueError, TwistedInt.isMulCommutative, 0)
+
+    def test_addAss_isValid(self):
+        #Proven that this will be true for all n
+        self.assertTrue(TwistedInt.isAddAssociative(5))
+
+    def test_addAss_zeronN(self):
+        self.assertRaises(ValueError, TwistedInt.isAddAssociative, 0)
+
+    #TODO Test the validity of MulAss
+
+    def test_mulAss_zeronN(self):
+        self.assertRaises(ValueError, TwistedInt.isMulAssociative, 0)
+
+    #TODO Test the validity of Dist
+
+    def test_isDistr_zeronN(self):
+        self.assertRaises(ValueError, TwistedInt.isDistributive, 0)
