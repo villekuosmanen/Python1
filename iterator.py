@@ -28,3 +28,31 @@ class IteratorOfTwistedIntegers:
             return i
         else:
             raise StopIteration()
+
+    @staticmethod
+    def addition(n):
+        values = []
+        x = IteratorOfTwistedIntegers(TwistedIntegers(n))
+        for i in x:
+            for k in x:
+                if str(i*k) == str(k):
+                    # only happens when the last element of the list is reached
+                    if str(k) == "<"+str(n-1)+":"+str(n)+">":
+                        values.append(str(i))
+                else:
+                    break
+        return values
+
+    @staticmethod
+    def multiplication(n):
+        values = []
+        x = IteratorOfTwistedIntegers(TwistedIntegers(n))
+        for i in x:
+            for k in x:
+                if str(i*k) == str(k):
+                    # only happens when the last element of the list is reached
+                    if str(k) == "<"+str(n-1)+":"+str(n)+">":
+                        values.append(str(i))
+                else:
+                    break
+        return values
