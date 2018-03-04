@@ -1,6 +1,6 @@
 from twistedints import TwistedInt
 
-#Used to test what kind of values the mathematical functions give
+# Used to test what kind of values the mathematical functions give
 
 for x in range(1, 101):
     print(TwistedInt.isAddCommutative(x))

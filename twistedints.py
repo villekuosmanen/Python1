@@ -1,3 +1,5 @@
+# coding: utf-8
+
 #!/usr/bin/env python3
 #
 # Twisted Ints
@@ -48,8 +50,8 @@ class TwistedInt:
 		"""Tests if for all twisted ints of a given n, a ⊕ b == b ⊕ a"""
 		if n < 1:
 			raise ValueError('n must be positive')
-		for x in range(0, n-1):
-			for y in range (x, n-1):
+		for x in range(0, n):
+			for y in range (x, n):
 				if TwistedInt.__addition(x, y, n) != TwistedInt.__addition(y, x, n):
 					return False
 		return True
@@ -59,8 +61,8 @@ class TwistedInt:
 		"""Tests if for all twisted ints of a given n, a ⊗ b == b ⊗ a"""
 		if n < 1:
 			raise ValueError('n must be positive')
-		for x in range(0, n-1):
-			for y in range (x, n-1):
+		for x in range(0, n):
+			for y in range (x, n):
 				if TwistedInt.__multiply(x, y, n) != TwistedInt.__multiply(y, x, n):
 					return False
 		return True
@@ -70,9 +72,9 @@ class TwistedInt:
 		"""Tests if for all twisted ints of a given n, (a ⊕ b) ⊕ c == a ⊕ (b ⊕ c)"""
 		if n < 1:
 			raise ValueError('n must be positive')
-		for y in range(0, n-1):
-			for x in range(0, n-1):
-				for z in range (x, n-1):
+		for y in range(0, n):
+			for x in range(0, n):
+				for z in range (x, n):
 					if (TwistedInt.__addition(TwistedInt.__addition(x, y, n), z, n) != 
 						TwistedInt.__addition(x, TwistedInt.__addition(y, z, n), n)):
 						return False
@@ -83,9 +85,9 @@ class TwistedInt:
 		"""Tests if for all twisted ints of a given n, (a ⊗ b) ⊗ c == a ⊗ (b ⊗ c)"""
 		if n < 1:
 			raise ValueError('n must be positive')
-		for y in range(0, n-1):
-			for x in range(0, n-1):
-				for z in range (x, n-1):
+		for y in range(0, n):
+			for x in range(0, n):
+				for z in range (x, n):
 					if (TwistedInt.__multiply(TwistedInt.__multiply(x, y, n), z, n) != 
 						TwistedInt.__multiply(x, TwistedInt.__multiply(y, z, n), n)):
 						return False
@@ -99,9 +101,9 @@ class TwistedInt:
 		#However, since we don't know for sure, we can't optimise this.
 		if n < 1:
 			raise ValueError('n must be positive')
-		for y in range(0, n-1):
-			for x in range(0, n-1):
-				for z in range (0, n-1):
+		for y in range(0, n):
+			for x in range(0, n):
+				for z in range (0, n):
 					if (TwistedInt.__multiply(TwistedInt.__addition(x, y, n), z, n) != 
 						TwistedInt.__addition(TwistedInt.__multiply(x, z, n), TwistedInt.__multiply(y, z, n), n)):
 						return False
