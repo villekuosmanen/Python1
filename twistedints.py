@@ -23,7 +23,7 @@ class TwistedInt:
 
 	def __add__(self, other):
 		"""Addition rules: a ⊕ b = (a + b) mod n
-		
+
 		>>> str(TwistedInt(4, 7) + TwistedInt(3, 7))
 		'<0:7>'
 		"""
@@ -35,7 +35,7 @@ class TwistedInt:
 
 	def __mul__(self, other):
 		"""Multiplication rules: a ⊗ b = (a + b + a · b) mod n
-		
+
 		>>> str(TwistedInt(4, 7) * TwistedInt(3, 7))
 		'<5:7>'
 		"""
@@ -44,20 +44,22 @@ class TwistedInt:
 			return TwistedInt(total_value, self.n)
 		else:
 			raise ValueError('TwistedInts must have same n')
-			
+
 	@classmethod
 	def __addition(self, value1, value2, n):
 		return (value1 + value2) % n
-	
+
 	@classmethod
 	def __multiply(self, value1, value2, n):
 		return (value1 + value2 + value1 * value2) % n
-	
+
 	@staticmethod
 	def printall1(n):
 		"""Returns all values in Zn where x ⊗ x = 1
-		
-		TODO write a doctest"""
+
+		>>> TwistedInt.printall1(17)
+        ['5', '10']  Total: 2
+        """
 		if n < 1:
 			raise ValueError('Negative or 0 n not allowed')
 		values = []
@@ -70,7 +72,7 @@ class TwistedInt:
 	@staticmethod
 	def isAddCommutative(n):
 		"""Tests if for all twisted ints of a given n, a ⊕ b == b ⊕ a
-		
+
 		>>> TwistedInt.isAddCommutative(6)
 		True
 		"""
@@ -85,7 +87,7 @@ class TwistedInt:
 	@staticmethod
 	def isMulCommutative(n):
 		"""Tests if for all twisted ints of a given n, a ⊗ b == b ⊗ a
-		
+
 		>>> TwistedInt.isMulCommutative(6)
 		True
 		"""
@@ -100,7 +102,7 @@ class TwistedInt:
 	@staticmethod
 	def isAddAssociative(n):
 		"""Tests if for all twisted ints of a given n, (a ⊕ b) ⊕ c == a ⊕ (b ⊕ c)
-		
+
 		>>> TwistedInt.isAddAssociative(6)
 		True
 		"""
@@ -109,11 +111,11 @@ class TwistedInt:
 		for y in range(0, n):
 			for x in range(0, n):
 				for z in range (x, n):
-					if (TwistedInt.__addition(TwistedInt.__addition(x, y, n), z, n) != 
+					if (TwistedInt.__addition(TwistedInt.__addition(x, y, n), z, n) !=
 						TwistedInt.__addition(x, TwistedInt.__addition(y, z, n), n)):
 						return False
 		return True
-		
+
 	@staticmethod
 	def isMulAssociative(n):
 		"""Tests if for all twisted ints of a given n, (a ⊗ b) ⊗ c == a ⊗ (b ⊗ c)
@@ -126,11 +128,11 @@ class TwistedInt:
 		for y in range(0, n):
 			for x in range(0, n):
 				for z in range (x, n):
-					if (TwistedInt.__multiply(TwistedInt.__multiply(x, y, n), z, n) != 
+					if (TwistedInt.__multiply(TwistedInt.__multiply(x, y, n), z, n) !=
 						TwistedInt.__multiply(x, TwistedInt.__multiply(y, z, n), n)):
 						return False
 		return True
-		
+
 	@staticmethod
 	def isDistributive(n):
 		"""Tests if for all twisted ints of a given n, (a ⊕ b) ⊗ c == (a ⊗ c) ⊕ (b ⊗ c)
@@ -146,7 +148,7 @@ class TwistedInt:
 		for y in range(0, n):
 			for x in range(0, n):
 				for z in range (0, n):
-					if (TwistedInt.__multiply(TwistedInt.__addition(x, y, n), z, n) != 
+					if (TwistedInt.__multiply(TwistedInt.__addition(x, y, n), z, n) !=
 						TwistedInt.__addition(TwistedInt.__multiply(x, z, n), TwistedInt.__multiply(y, z, n), n)):
 						return False
 		return True

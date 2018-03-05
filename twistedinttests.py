@@ -115,15 +115,19 @@ class TwistedInt_Test(unittest.TestCase):
 
     # printall1 testing
     def test_printall1_valid(self):
+        """Tests finding the x values where x ⊗ x = 1 when n is 17"""
         self.assertEqual("['5', '10']  Total: 2", TwistedInt.printall1(17))
 
     def test_printall1_validButEmpty(self):
+        """Tests finding the x values where x ⊗ x = 1 when n is 5, which should have no results"""
         self.assertEqual("[]  Total: 0", TwistedInt.printall1(5))
 
     def test_printall1_zeroN(self):
+        """Tests if finding the x values of x ⊗ x = 1 when n is 0 throws an error"""
         self.assertRaises(ValueError, TwistedInt.printall1, 0)
 
     def test_printall1_negativeN(self):
+        """Tests if finding the x values of x ⊗ x = 1 when n is negative throws an error"""
         self.assertRaises(ValueError, TwistedInt.printall1, -2)
 
     #tests for the functions that check properties of twisted integers
