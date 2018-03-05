@@ -28,3 +28,33 @@ class IteratorOfTwistedIntegers:
             return i
         else:
             raise StopIteration()
+
+    @staticmethod
+    def addition(n):
+        """Returns for a given n all elements τ of Zn such that τ ⊕ x = x for all x ∈ Zn"""
+        values = []
+        twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
+        for i in twistedints_list:
+            for k in twistedints_list:
+                if str(i+k) == str(k):
+                    """Only happens when the last element of the list is reached"""
+                    if str(k) == "<"+str(n-1)+":"+str(n)+">":
+                        values.append(str(i))
+                else:
+                    break
+        return values
+
+    @staticmethod
+    def multiplication(n):
+        """Returns for a given n all elements ε of Zn such that ε ⊗ x = x for all x ∈ Zn"""
+        values = []
+        twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
+        for i in twistedints_list:
+            for k in twistedints_list:
+                if str(i*k) == str(k):
+                    """Only happens when the last element of the list is reached"""
+                    if str(k) == "<"+str(n-1)+":"+str(n)+">":
+                        values.append(str(i))
+                else:
+                    break
+        return values
