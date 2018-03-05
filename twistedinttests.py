@@ -117,19 +117,14 @@ class TwistedInt_Test(unittest.TestCase):
     def test_printall1_valid(self):
         self.assertEqual("['5', '10']  Total: 2", TwistedInt.printall1(17))
 
-    def test_zero_length(self):
-        self.assertRaises(ValueError, TwistedIntegers, 0)
+    def test_printall1_validButEmpty(self):
+        self.assertEqual("[]  Total: 0", TwistedInt.printall1(5))
 
-    def test_negative_length(self):
-        self.assertRaises(ValueError, TwistedIntegers, -1)
+    def test_printall1_zeroN(self):
+        self.assertRaises(ValueError, TwistedInt.printall1, 0)
 
-    def test_regular_length(self):
-        z = TwistedIntegers(5)
-        self.assertEqual("[0, 1, 2, 3, 4]", str(z))
-
-    def test_find_size(self):
-        z = TwistedIntegers(5)
-        self.assertEqual(5, TwistedIntegers.Size(z))
+    def test_printall1_negativeN(self):
+        self.assertRaises(ValueError, TwistedInt.printall1, -2)
 
     #tests for the functions that check properties of twisted integers
 
@@ -180,8 +175,6 @@ class TwistedInt_Test(unittest.TestCase):
     def test_mulAss_zeronN(self):
         """Tests that calling the test with n=0 throws an error"""
         self.assertRaises(ValueError, TwistedInt.isMulAssociative, 0)
-
-    #TODO Test the validity of Dist
 
     def test_isDistr_false(self):
         """Tests that twisted int arithmetic is not distributive for n=20"""

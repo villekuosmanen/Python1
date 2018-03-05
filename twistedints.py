@@ -44,6 +44,18 @@ class TwistedInt:
 	@classmethod
 	def __multiply(self, value1, value2, n):
 		return (value1 + value2 + value1 * value2) % n
+	
+	@staticmethod
+	def printall1(n):
+		"""Returns all values in Zn where x ⊗ x = 1"""
+		if n < 1:
+			raise ValueError('Negative or 0 n not allowed')
+		values = []
+		for i in range(n):
+			it = TwistedInt(i,n)
+			if str(it*it) == "<1:" + str(n) + ">":
+				values.append(str(i))
+		return str(values) + "  Total: " + str(len(values))
 
 	@staticmethod
 	def isAddCommutative(n):

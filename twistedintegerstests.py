@@ -6,10 +6,10 @@ class TwistedIntegers_Test(unittest.TestCase):
     # twisted integers (list) testing
 
     def test_zero_length(self):
-        self.assertRaises(ValueError, TwistedIntegers.__init__, self, 0)
+        self.assertRaises(ValueError, TwistedIntegers, 0)
 
     def test_negative_length(self):
-        self.assertRaises(ValueError, TwistedIntegers.__init__, self, -1)
+        self.assertRaises(ValueError, TwistedIntegers, -1)
 
     def test_regular_length(self):
         z = TwistedIntegers(5)
