@@ -16,7 +16,7 @@ class TwistedIntegers:
                 self.list.append(TwistedInt(i,n))
                 i += 1
 
-    def __str__(self, other=None):
+    def __str__(self):
         """Output the Zn list"""
         return (str([str(item) for item in self.list]))
 
