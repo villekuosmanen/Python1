@@ -117,8 +117,11 @@ class TwistedInt_Test(unittest.TestCase):
     def test_printall1_valid(self):
         self.assertEqual("['5', '10']  Total: 2", TwistedInt.printall1(17))
 
-    def test_printall1_validButEmpty(self):
-        self.assertEqual("[]  Total: 0", TwistedInt.printall1(5))
+    def test_printall1_validOne(self):
+        self.assertEqual("[]  Total: 0", TwistedInt.printall1(1))
+
+    def test_printall1_validTwenty(self):
+        self.assertEqual("[]  Total: 0", TwistedInt.printall1(20))
 
     def test_printall1_zeroN(self):
         self.assertRaises(ValueError, TwistedInt.printall1, 0)
