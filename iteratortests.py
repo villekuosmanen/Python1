@@ -7,6 +7,7 @@ class TwistedIntegersIterator_Test(unittest.TestCase):
     # twisted integers (list) testing
 
     def test_iteration(self):
+        """Tests the iteration"""
         x = IteratorOfTwistedIntegers(TwistedIntegers(3))
         j = 0
         for i in x:
