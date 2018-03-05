@@ -113,7 +113,9 @@ class TwistedInt_Test(unittest.TestCase):
         b = TwistedInt(0,2)
         self.assertRaises(ValueError, TwistedInt.__mul__, a, b)
 
-    # twisted integers (list) testing
+    # printall1 testing
+    def test_printall1_valid(self):
+        self.assertEqual("['5', '10']  Total: 2", TwistedInt.printall1(17))
 
     def test_zero_length(self):
         self.assertRaises(ValueError, TwistedIntegers, 0)
