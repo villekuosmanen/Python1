@@ -1,0 +1,66 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module twistedmatrix</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>twistedmatrix</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/cs/home/al255/Documents/cs2006/Python1/twistedmatrix.py">/cs/home/al255/Documents/cs2006/Python1/twistedmatrix.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Twisted&nbsp;Matrix</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="twistedmatrix.html#TwistedMatrix">TwistedMatrix</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TwistedMatrix">class <strong>TwistedMatrix</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;twisted&nbsp;matrix&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TwistedMatrix-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Addition&nbsp;of&nbsp;2&nbsp;matrices<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;[TwistedInt(0,2),&nbsp;TwistedInt(1,2)]<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;[TwistedInt(0,2),&nbsp;TwistedInt(1,2)]<br>
+&gt;&gt;&gt;&nbsp;m1&nbsp;=&nbsp;<a href="#TwistedMatrix">TwistedMatrix</a>([x,y])<br>
+&gt;&gt;&gt;&nbsp;m2&nbsp;=&nbsp;<a href="#TwistedMatrix">TwistedMatrix</a>([x,y])<br>
+&gt;&gt;&gt;&nbsp;print(m1+m2)<br>
+["['&lt;0:2&gt;',&nbsp;'&lt;0:2&gt;']",&nbsp;"['&lt;0:2&gt;',&nbsp;'&lt;0:2&gt;']"]</tt></dd></dl>
+
+<dl><dt><a name="TwistedMatrix-__init__"><strong>__init__</strong></a>(self, Xn)</dt><dd><tt>Initialise&nbsp;the&nbsp;matrix<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;[TwistedInt(0,2),&nbsp;TwistedInt(1,2)]<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;[TwistedInt(0,2),&nbsp;TwistedInt(1,2)]<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#TwistedMatrix">TwistedMatrix</a>([x,y]))<br>
+["['&lt;0:2&gt;',&nbsp;'&lt;1:2&gt;']",&nbsp;"['&lt;0:2&gt;',&nbsp;'&lt;1:2&gt;']"]</tt></dd></dl>
+
+<dl><dt><a name="TwistedMatrix-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Multiplication&nbsp;of&nbsp;matrices<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;[TwistedInt(1,9),&nbsp;TwistedInt(2,9)]<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;[TwistedInt(3,9),&nbsp;TwistedInt(4,9)]<br>
+&gt;&gt;&gt;&nbsp;x1&nbsp;=&nbsp;[TwistedInt(5,9),&nbsp;TwistedInt(6,9)]<br>
+&gt;&gt;&gt;&nbsp;y1&nbsp;=&nbsp;[TwistedInt(7,9),&nbsp;TwistedInt(8,9)]<br>
+&gt;&gt;&gt;&nbsp;m1&nbsp;=&nbsp;<a href="#TwistedMatrix">TwistedMatrix</a>([x,y])<br>
+&gt;&gt;&gt;&nbsp;m2&nbsp;=&nbsp;<a href="#TwistedMatrix">TwistedMatrix</a>([x1,y1])<br>
+&gt;&gt;&gt;&nbsp;print(m1*m2)<br>
+["['&lt;7:9&gt;',&nbsp;'&lt;3:9&gt;']",&nbsp;"['&lt;8:9&gt;',&nbsp;'&lt;8:9&gt;']"]</tt></dd></dl>
+
+<dl><dt><a name="TwistedMatrix-__str__"><strong>__str__</strong></a>(self, other<font color="#909090">=None</font>)</dt><dd><tt>Output&nbsp;the&nbsp;matrix<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#TwistedMatrix">TwistedMatrix</a>([[TwistedInt(0,2),&nbsp;TwistedInt(1,2)],[TwistedInt(0,2),&nbsp;TwistedInt(1,2)]]))<br>
+["['&lt;0:2&gt;',&nbsp;'&lt;1:2&gt;']",&nbsp;"['&lt;0:2&gt;',&nbsp;'&lt;1:2&gt;']"]</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

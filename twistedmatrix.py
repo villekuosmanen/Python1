@@ -10,7 +10,12 @@ class TwistedMatrix:
     """The twisted matrix class"""
     def __init__(self, Xn):            # Xn is a list of lists of TwistedInt objects
                                        # to allow matrices of various dimensions
-        """Initialise the matrix"""
+        """Initialise the matrix
+        >>> x = [TwistedInt(0,2), TwistedInt(1,2)]
+        >>> y = [TwistedInt(0,2), TwistedInt(1,2)]
+        >>> print(TwistedMatrix([x,y]))
+        [\"[\'<0:2>\', \'<1:2>\']\", \"[\'<0:2>\', \'<1:2>\']\"]
+        """
         length = len(Xn[0])
         i = 0
         while i < len(Xn):
@@ -20,14 +25,27 @@ class TwistedMatrix:
         self.matrix = Xn
 
     def __str__(self):
-        """Output the matrix"""
+        """Output the matrix
+        
+        >>> print(TwistedMatrix([[TwistedInt(0,2), TwistedInt(1,2)],[TwistedInt(0,2), TwistedInt(1,2)]]))
+        [\"[\'<0:2>\', \'<1:2>\']\", \"[\'<0:2>\', \'<1:2>\']\"]
+        """
         output = []
         for i in self.matrix:
             output.append(str([str(item) for item in i]))
         return str(output)
 
     def __add__(self, other):
-        """Addition of 2 matrices"""
+        """Addition of 2 matrices
+
+        >>> x = [TwistedInt(0,2), TwistedInt(1,2)]
+        >>> y = [TwistedInt(0,2), TwistedInt(1,2)]
+        >>> m1 = TwistedMatrix([x,y])
+        >>> m2 = TwistedMatrix([x,y])
+        >>> print(m1+m2)
+        [\"[\'<0:2>\', \'<0:2>\']\", \"[\'<0:2>\', \'<0:2>\']\"]
+
+        """
         if len(self.matrix[0]) != len(other.matrix[0]) or len(self.matrix) != len(other.matrix):
             raise ValueError("Cannot add matrices of different dimensions")
         row = 0
@@ -43,7 +61,18 @@ class TwistedMatrix:
         return TwistedMatrix(newmatrix)
 
     def __mul__(self, other):
-        """Multiplication of matrices"""
+        """Multiplication of matrices
+
+        >>> x = [TwistedInt(1,9), TwistedInt(2,9)]
+        >>> y = [TwistedInt(3,9), TwistedInt(4,9)]
+        >>> x1 = [TwistedInt(5,9), TwistedInt(6,9)]
+        >>> y1 = [TwistedInt(7,9), TwistedInt(8,9)]
+        >>> m1 = TwistedMatrix([x,y])
+        >>> m2 = TwistedMatrix([x1,y1])
+        >>> print(m1*m2)
+        [\"[\'<7:9>\', \'<3:9>\']\", \"[\'<8:9>\', \'<8:9>\']\"]
+
+        """
         if (len(self.matrix[0]) != len(other.matrix)):
             raise ValueError("[A] x [B]: [B] must have as many rows as [A] has columns")
         bColumns = 0

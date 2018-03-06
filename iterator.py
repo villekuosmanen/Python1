@@ -7,14 +7,22 @@ from twistedintegers import TwistedIntegers
 class IteratorOfTwistedIntegers:
     """The iterator of twisted integers class"""
     def __init__(self, Zn):
-        """Initialise Zn with the given n length"""
-        if len(Zn.list) == 0:
-            raise ValueError('Length of the list cannot be equal to 0')
+        """Initialise Zn with the given n length
+
+        >>> x = IteratorOfTwistedIntegers(TwistedIntegers(2))
+        """
         self.list = Zn.list
         self.i = self.list[0]
 
     def __str__(self):
-        """Output format: <a:n> where a ∈ Zn"""
+        """Output format: <a:n> where a ∈ Zn
+
+        >>> x = IteratorOfTwistedIntegers(TwistedIntegers(3))
+        >>> for i in x: print (i)
+        <0:3>
+        <1:3>
+        <2:3>
+        """
         return str(self.list)
 
     def __iter__(self):
@@ -31,7 +39,11 @@ class IteratorOfTwistedIntegers:
 
     @staticmethod
     def addition(n):
-        """Returns for a given n all elements τ of Zn such that τ ⊕ x = x for all x ∈ Zn"""
+        """Returns for a given n all elements τ of Zn such that τ ⊕ x = x for all x ∈ Zn
+
+        >>> IteratorOfTwistedIntegers.addition(3)
+        ['<0:3>']
+        """
         values = []
         twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
         for i in twistedints_list:
@@ -46,7 +58,11 @@ class IteratorOfTwistedIntegers:
 
     @staticmethod
     def multiplication(n):
-        """Returns for a given n all elements ε of Zn such that ε ⊗ x = x for all x ∈ Zn"""
+        """Returns for a given n all elements ε of Zn such that ε ⊗ x = x for all x ∈ Zn
+
+        >>> IteratorOfTwistedIntegers.multiplication(3)
+        ['<0:3>']
+        """
         values = []
         twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
         for i in twistedints_list:

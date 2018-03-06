@@ -7,17 +7,20 @@ class TwistedMatrices_Test(unittest.TestCase):
     # twisted integers (list) testing
 
     def test_diff_length(self):
+        """Tests the creation of TwistedMatrix with rows of different length"""
         x = [TwistedInt(0,2), TwistedInt(1,2)]
         y = [TwistedInt(0,3), TwistedInt(1,3), TwistedInt(2,3)]
         self.assertRaises(ValueError, TwistedMatrix.__init__, self, [x,y])
 
     def test_same_length(self):
+        """Tests a normal case of creating a TwistedMatrix"""
         x = [TwistedInt(0,2), TwistedInt(1,2)]
         y = [TwistedInt(0,2), TwistedInt(1,2)]
         m = TwistedMatrix([x,y])
         self.assertEqual("[\"[\'<0:2>\', \'<1:2>\']\", \"[\'<0:2>\', \'<1:2>\']\"]", str(m))
 
     def test_add(self):
+        """Tests a normal case of adding two identical 2-dimensional matrices"""
         x = [TwistedInt(0,2), TwistedInt(1,2)]
         y = [TwistedInt(0,2), TwistedInt(1,2)]
         m1 = TwistedMatrix([x,y])
@@ -25,6 +28,7 @@ class TwistedMatrices_Test(unittest.TestCase):
         self.assertEqual("[\"[\'<0:2>\', \'<0:2>\']\", \"[\'<0:2>\', \'<0:2>\']\"]", str(m1+m2))
 
     def test_add2(self):
+        """Tests a normal case of adding two non-identical 2-dimensional matrices"""
         x = [TwistedInt(1,9), TwistedInt(2,9)]
         y = [TwistedInt(3,9), TwistedInt(4,9)]
         x1 = [TwistedInt(5,9), TwistedInt(6,9)]
@@ -34,6 +38,7 @@ class TwistedMatrices_Test(unittest.TestCase):
         self.assertEqual("[\"[\'<6:9>\', \'<8:9>\']\", \"[\'<1:9>\', \'<3:9>\']\"]", str(m1+m2))
 
     def test_add_wrong_dimensions(self):
+        """Tests a corner case of adding two matrices with different dimensions"""
         x = [TwistedInt(1,11), TwistedInt(2,11)]
         y = [TwistedInt(3,11), TwistedInt(4,11)]
         z = [TwistedInt(5,11), TwistedInt(6,11)]
@@ -44,6 +49,7 @@ class TwistedMatrices_Test(unittest.TestCase):
         self.assertRaises(ValueError, TwistedMatrix.__add__, m2,m1)
 
     def test_mul(self):
+        """Tests a normal case of multiplying two 2-dimensional matrices"""
         x = [TwistedInt(1,9), TwistedInt(2,9)]
         y = [TwistedInt(3,9), TwistedInt(4,9)]
         x1 = [TwistedInt(5,9), TwistedInt(6,9)]
@@ -53,6 +59,7 @@ class TwistedMatrices_Test(unittest.TestCase):
         self.assertEqual("[\"[\'<7:9>\', \'<3:9>\']\", \"[\'<8:9>\', \'<8:9>\']\"]", str(m1*m2))
 
     def test_mul_diff_dimensions(self):
+        """Tests a normal case of multiplying two matrices with different dimensions"""
         x = [TwistedInt(1,11), TwistedInt(2,11)]
         y = [TwistedInt(3,11), TwistedInt(4,11)]
         z = [TwistedInt(5,11), TwistedInt(6,11)]
@@ -63,6 +70,8 @@ class TwistedMatrices_Test(unittest.TestCase):
         self.assertEqual("[\"[\'<0:11>\', \'<5:11>\']\", \"[\'<3:11>\', \'<1:11>\']\", \"[\'<6:11>\', \'<8:11>\']\"]", str(m1*m2))
 
     def test_mul_wrong_dimensions(self):
+        """Tests a corner case of multiplying two matrices with different dimensions
+           that cannot be mlutiplied"""
         x = [TwistedInt(1,11), TwistedInt(2,11)]
         y = [TwistedInt(3,11), TwistedInt(4,11)]
         z = [TwistedInt(5,11), TwistedInt(6,11)]
