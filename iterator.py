@@ -39,7 +39,11 @@ class IteratorOfTwistedIntegers:
 
     @staticmethod
     def addition(n):
-        """Returns for a given n all elements τ of Zn such that τ ⊕ x = x for all x ∈ Zn"""
+        """Returns for a given n all elements τ of Zn such that τ ⊕ x = x for all x ∈ Zn
+
+        >>> IteratorOfTwistedIntegers.addition(3)
+        ['<0:3>']
+        """
         values = []
         twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
         for i in twistedints_list:
@@ -54,7 +58,11 @@ class IteratorOfTwistedIntegers:
 
     @staticmethod
     def multiplication(n):
-        """Returns for a given n all elements ε of Zn such that ε ⊗ x = x for all x ∈ Zn"""
+        """Returns for a given n all elements ε of Zn such that ε ⊗ x = x for all x ∈ Zn
+
+        >>> IteratorOfTwistedIntegers.multiplication(3)
+        ['<0:3>']
+        """
         values = []
         twistedints_list = IteratorOfTwistedIntegers(TwistedIntegers(n))
         for i in twistedints_list:
