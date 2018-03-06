@@ -7,7 +7,10 @@
 class TwistedInt:
 	"""The twisted int class"""
 	def __init__(self, value, n):
-		"""Initialise"""
+		"""Initialise
+
+		>>> TwistedInt(0,2)
+		"""
 		if value < 0:
 			raise ValueError('Negative values not allowed')
 		if value > n:
@@ -18,7 +21,11 @@ class TwistedInt:
 		self.n = n
 
 	def __str__(self, other=None):
-		"""Output format: <a:n> where a ∈ Zn"""
+		"""Output format: <a:n> where a ∈ Zn
+
+		>>> str(TwistedInt(4, 7))
+		'<4:7>'
+		"""
 		return ("<" + str(self.value) + ":" + str(self.n) + ">")
 
 	def __add__(self, other):
@@ -58,7 +65,7 @@ class TwistedInt:
 		"""Returns all values in Zn where x ⊗ x = 1
 
 		>>> TwistedInt.printall1(17)
-        ['5', '10']  Total: 2
+		"['5', '10']  Total: 2"
         """
 		if n < 1:
 			raise ValueError('Negative or 0 n not allowed')

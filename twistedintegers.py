@@ -10,7 +10,7 @@ class TwistedIntegers:
 
         >>> x = TwistedIntegers(2)
         >>> print(x)
-        [<0:2>,<1:2>]
+        ['<0:2>', '<1:2>']
         """
         if n <= 0:
             raise ValueError('Length of the list cannot be less or equal to 0')
@@ -26,7 +26,7 @@ class TwistedIntegers:
 
         >>> x = TwistedIntegers(2)
         >>> print(x)
-        [<0:2>,<1:2>]
+        ['<0:2>', '<1:2>']
         """
         return (str([str(item) for item in self.list]))
 
