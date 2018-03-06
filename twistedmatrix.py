@@ -3,6 +3,7 @@
 # Twisted Matrix
 from twistedints import TwistedInt
 from twistedintegers import TwistedIntegers
+import time
 
 class TwistedMatrix:
     """The twisted matrix class"""
@@ -17,7 +18,7 @@ class TwistedMatrix:
             i += 1
         self.matrix = Xn
 
-    def __str__(self, other=None):
+    def __str__(self):
         """Output the matrix"""
         output = []
         for i in self.matrix:
@@ -66,3 +67,28 @@ class TwistedMatrix:
                 aRows += 1
             bColumns += 1
         return TwistedMatrix(newmatrix)
+
+    def getMulRuntime(size1a, size1b, size2a, size2b, n):
+        """Return runtime of multiplication of matrices with given sizes and n
+        Usage: 'TwistedMatrix.getMulRuntime(2,2,2,2,5)'
+        (to multiply a 2x2 matrix with another 2x2 matrix, with n = 5)
+        """
+        standardTwistedInt = TwistedInt(1,n) # standard value to simplify test
+        list1 = [] # creates first matrix
+        for i in range(size1a):
+            row = []
+            for j in range(size1b):
+                row.append(standardTwistedInt)
+            list1.append(row)
+        matrix1 = TwistedMatrix(list1)
+        list2 = [] # creates second matrix
+        for i in range(size2a):
+            row = []
+            for j in range(size2b):
+                row.append(standardTwistedInt)
+            list2.append(row)
+        matrix2 = TwistedMatrix(list2)
+        start = time.time() # start of runtime measurement
+        TwistedMatrix.__mul__(matrix1, matrix2)
+        end = time.time()
+        print(str(end - start) + " seconds")
