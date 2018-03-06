@@ -22,6 +22,10 @@ class TwistedInt_Test(unittest.TestCase):
         self.assertEqual(0, a.value)
         self.assertEqual(8, a.n)
 
+    def test_init_bothZero(self):
+        """Tests that initializing n and the value to be zero throws an error"""
+        self.assertRaises(ValueError, TwistedInt, 0, 0)
+
     def test_init_negativeN(self):
         """Tests that initializing n to be negative throws an error"""
         self.assertRaises(ValueError, TwistedInt, 2, -1)
