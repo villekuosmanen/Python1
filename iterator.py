@@ -11,8 +11,6 @@ class IteratorOfTwistedIntegers:
 
         >>> x = IteratorOfTwistedIntegers(TwistedIntegers(2))
         """
-        if len(Zn.list) == 0:
-            raise ValueError('Length of the list cannot be equal to 0')
         self.list = Zn.list
         self.i = self.list[0]
 
