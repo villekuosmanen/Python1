@@ -7,10 +7,7 @@
 class TwistedInt:
 	"""The twisted int class"""
 	def __init__(self, value, n):
-		"""Initialise
-
-		>>> TwistedInt(0,2)
-		"""
+		"""Creates an instance of the Twisted Int class with the given values for value and n."""
 		if value < 0:
 			raise ValueError('Negative values not allowed')
 		if value > n:
